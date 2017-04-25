@@ -26,14 +26,14 @@ public class OfertaDAOImpl implements OfertaDAO {
 	
 	
 	@Override
-	public List<Oferta> getOfertas() {
+	public List<Oferta> getOfertas() throws OfertaException {
 		
 		
 		return ofertas;
 	}
 
 	@Override
-	public Oferta getOferta(int codigoOferta) {
+	public Oferta getOferta(int codigoOferta) throws OfertaException {
 		for(Oferta oferta : ofertas) {
 			if(oferta.getCodigoOferta()==codigoOferta) {
 				return oferta;
