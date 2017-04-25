@@ -17,21 +17,21 @@ public class OfertaDAOImplTest {
 	}
 
 	@Test
-	public void test() {
+	public void test() throws OfertaException {
 		List<Oferta> ofertas = dao.getOfertas();
 		
 		assertTrue(ofertas.size() == 2);
 	}
 
 	@Test
-	public void test2() {
+	public void test2() throws OfertaException {
 		Oferta oferta = dao.getOferta(1); // le tengo que pasar un codigo pq lo indica el dao
 		
 		assertTrue(oferta != null);
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
-	public void test3() {
+	public void test3() throws OfertaException {
 		dao.getOferta(5);
 	}
 }
