@@ -42,4 +42,14 @@ public class OfertaDAOImpl implements OfertaDAO {
 		throw new IllegalArgumentException();
 	}
 
+	@Override
+	public LocalDate getOfertaByDate(int codigoOferta) {
+		for(Oferta oferta : ofertas) {
+			if(oferta.getCodigoOferta()==codigoOferta) {
+				return oferta.getFechaInicio();
+			}
+		}
+		throw new IllegalArgumentException();
+	}
+
 }
